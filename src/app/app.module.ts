@@ -10,6 +10,7 @@ import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.co
 import { IndexComponent } from './pages/index/index.component';
 
 import { HttpService } from './services/http.service';
+import { LocalStorageService } from './services/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { HttpService } from './services/http.service';
     IndexComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [HttpService],
+  providers: [
+    HttpService,
+    LocalStorageService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
