@@ -9,6 +9,8 @@ import { PaymentComponent } from './pages/payment/payment.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 import { IndexComponent } from './pages/index/index.component';
 
+import { HttpService } from './services/http.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +20,8 @@ import { IndexComponent } from './pages/index/index.component';
     UserDashboardComponent,
     IndexComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [HttpService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
