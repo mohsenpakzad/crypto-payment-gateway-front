@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AuthInterceptor } from './interceptors/Auth.interceptor';
@@ -14,6 +14,7 @@ import { IndexComponent } from './pages/index/index.component';
 
 import { HttpService } from './services/http.service';
 import { LocalStorageService } from './services/local-storage.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,12 @@ import { LocalStorageService } from './services/local-storage.service';
     UserDashboardComponent,
     IndexComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     HttpService,
     LocalStorageService,
