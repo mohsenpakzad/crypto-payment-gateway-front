@@ -11,7 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
-import { IndexComponent } from './pages/index/index.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 import { HttpService } from './services/http.service';
 import { LocalStorageService } from './services/local-storage.service';
@@ -30,7 +30,7 @@ import { RippleModule } from 'primeng/ripple';
     SignupComponent,
     PaymentComponent,
     UserDashboardComponent,
-    IndexComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
