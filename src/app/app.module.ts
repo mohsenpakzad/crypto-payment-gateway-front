@@ -22,6 +22,8 @@ import { PanelModule } from 'primeng/panel';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { RippleModule } from 'primeng/ripple';
+import { DividerModule } from 'primeng/divider';
+import { StyleClassModule } from 'primeng/styleclass';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { RippleModule } from 'primeng/ripple';
     InputTextModule,
     PasswordModule,
     RippleModule,
+    DividerModule,
+    StyleClassModule,
   ],
   providers: [
     HttpService,
