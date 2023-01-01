@@ -42,14 +42,6 @@
         "plugin:@angular-eslint/template/recommended"
       ],
       "rules": {}
-    },
-    {
-      "files": ["*.html"],
-      "excludedFiles": ["*inline-template-*.component.html"],
-      "extends": ["plugin:prettier/recommended", "plugin:prettier-plugin-tailwindcss"],
-      "rules": {
-        "prettier/prettier": ["error", { "parser": "angular" }]
-      }
     }
   ]
 }
