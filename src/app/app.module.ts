@@ -3,7 +3,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AuthInterceptor } from './interceptors/Auth.interceptor';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,12 @@ import { IndexComponent } from './pages/index/index.component';
 import { HttpService } from './services/http.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { ButtonModule } from 'primeng/button';
+import { PanelModule } from 'primeng/panel';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { RippleModule } from 'primeng/ripple';
 
 @NgModule({
   declarations: [
@@ -32,6 +38,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ButtonModule,
+    PanelModule,
+    InputTextModule,
+    PasswordModule,
+    RippleModule,
   ],
   providers: [
     HttpService,
