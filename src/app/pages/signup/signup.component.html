@@ -18,7 +18,8 @@
           <p-password id="password1" placeholder="Password" [toggleMask]="true" styleClass="mb-5"
             inputStyleClass="w-full p-3 md:w-30rem" formControlName="password"></p-password>
 
-          <div class="flex align-items-center justify-content-between mb-2 gap-5">
+          <div class="flex align-items-center justify-content-between mb-5 gap-5">
+            <a (click)="router.navigate(['login'])" class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">Already signed? try login</a>
           </div>
 
           <button pButton pRipple label="Sign In" class="w-full p-3 text-xl" (click)="onSignup()"></button>

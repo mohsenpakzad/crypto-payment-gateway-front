@@ -12,7 +12,7 @@ import { HttpService } from '../../services/http.service';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor(private httpService: HttpService, private router: Router) {
+  constructor(private httpService: HttpService, public router: Router) {
     this.loginForm = new FormGroup({
       username: new FormControl(),
       password: new FormControl(),
