@@ -17,12 +17,12 @@ export class HttpService {
   public signup(signupUser: SignupUser) {
     return this.http
       .post(`${this.BASE_URL}/signup`, signupUser)
-      .pipe(tap(body => this.localStorageService.setJwt(JSON.stringify(body))));
+      .pipe(tap(body => this.localStorageService.setJwt(body as string)));
   }
 
-  public login(loginUser: LoginUser): Observable<any> {
+  public login(loginUser: LoginUser) {
     return this.http
       .post(`${this.BASE_URL}/login`, loginUser)
-      .pipe(tap(body => this.localStorageService.setJwt(JSON.stringify(body))));
+      .pipe(tap(body => this.localStorageService.setJwt(body as string)));
   }
 }
