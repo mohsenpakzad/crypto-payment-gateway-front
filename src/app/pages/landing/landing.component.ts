@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,5 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent {
-  constructor(public router: Router) {}
+  constructor(
+    public router: Router,
+    public localStorageService: LocalStorageService
+  ) {}
 }

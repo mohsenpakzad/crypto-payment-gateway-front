@@ -10,10 +10,20 @@
             </a>
           </li>
         </ul>
+
+
         <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
-          <button pButton pRipple (click)="router.navigate(['login'])" label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"></button>
-          <button pButton pRipple (click)="router.navigate(['signup'])" label="Register" class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500 text-white"></button>
-        </div>
+
+          <div *ngIf="localStorageService.getJwt();then content else other_content"></div>
+          <ng-template #content>
+            <button pButton pRipple (click)="router.navigate(['dashboard'])" label="Return to your dashboard" class="p-button-rounded border-none font-light line-height-2 bg-blue-500 text-white"></button>
+          </ng-template>
+          <ng-template #other_content>
+            <button pButton pRipple (click)="router.navigate(['login'])" label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"></button>
+            <button pButton pRipple (click)="router.navigate(['signup'])" label="Register" class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500 text-white"></button>
+          </ng-template>
+
+          </div>
       </div>
     </div>
 
@@ -22,7 +32,7 @@
       <div class="mx-4 md:mx-8 mt-0 md:mt-4">
         <h1 class="text-6xl font-bold text-gray-900 line-height-2"><span class="font-light block">Welcome to</span>Crypto Payment Gateway</h1>
         <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700">We help you make payments with the world's most popular cryptocurrencies</p>
-        <button pButton pRipple type="button" label="Get Started" (click)="router.navigate(['signup'])" class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button>
+        <button *ngIf="!localStorageService.getJwt()" pButton pRipple type="button" label="Get Started" (click)="router.navigate(['signup'])" class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button>
       </div>
       <div class="flex justify-content-center md:justify-content-end">
         <img src="assets/images/crypto-payment.png" alt="Crypto Image" class="w-9 md:w-auto" style="max-height: 26.5rem">
