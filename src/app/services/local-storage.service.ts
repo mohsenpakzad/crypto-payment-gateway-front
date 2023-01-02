@@ -11,4 +11,8 @@ export class LocalStorageService {
   public getJwt(): string | null {
     return localStorage.getItem(this.JWT_TOKEN_KEY);
   }
+
+  public removeJwt() {
+    localStorage.removeItem(this.JWT_TOKEN_KEY);
+  }
 }
