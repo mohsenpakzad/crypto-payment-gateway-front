@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -14,8 +15,8 @@ import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.co
 import { LandingComponent } from './pages/landing/landing.component';
 
 import { HttpService } from './services/http.service';
+import { WebsocketService } from './services/websocket.service';
 import { LocalStorageService } from './services/local-storage.service';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
@@ -24,6 +25,8 @@ import { PasswordModule } from 'primeng/password';
 import { RippleModule } from 'primeng/ripple';
 import { DividerModule } from 'primeng/divider';
 import { StyleClassModule } from 'primeng/styleclass';
+import { TableModule } from 'primeng/table';
+import { MenuModule } from 'primeng/menu';
 
 @NgModule({
   declarations: [
@@ -47,9 +50,13 @@ import { StyleClassModule } from 'primeng/styleclass';
     RippleModule,
     DividerModule,
     StyleClassModule,
+    TableModule,
+    MenuModule,
+    FormsModule,
   ],
   providers: [
     HttpService,
+    WebsocketService,
     LocalStorageService,
     {
       provide: HTTP_INTERCEPTORS,
