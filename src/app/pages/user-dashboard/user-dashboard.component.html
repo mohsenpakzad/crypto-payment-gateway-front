@@ -140,7 +140,7 @@
             </div>
 
             <div>
-              <input [(ngModel)]="balance.withdrawal_amount" type="text" placeholder="Amount" pInputText class="w-full md:w-20rem" style="padding:1rem" >
+              <input [(ngModel)]="balance.withdrawal_amount" type="text" placeholder="Amount" pInputText class="w-full md:w-20rem">
               <p-button class="ml-2" (click)="withdrawalBalance(balance.fiat_currency_id, balance.withdrawal_amount! )">Withdrawal</p-button>
             </div>
           </li>
