@@ -13,9 +13,11 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { ChooseCryptoComponent } from './pages/payment/choose-crypto/choose-crypto.component';
+import { SubTransactionsComponent } from './pages/payment/sub-transactions/sub-transactions.component';
+import { ResultComponent } from './pages/payment/result/result.component';
 
 import { HttpService } from './services/http.service';
-import { WebsocketService } from './services/websocket.service';
 import { LocalStorageService } from './services/local-storage.service';
 
 import { ButtonModule } from 'primeng/button';
@@ -27,6 +29,9 @@ import { DividerModule } from 'primeng/divider';
 import { StyleClassModule } from 'primeng/styleclass';
 import { TableModule } from 'primeng/table';
 import { MenuModule } from 'primeng/menu';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { StepsModule } from 'primeng/steps';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 @NgModule({
   declarations: [
@@ -36,6 +41,9 @@ import { MenuModule } from 'primeng/menu';
     PaymentComponent,
     UserDashboardComponent,
     LandingComponent,
+    ChooseCryptoComponent,
+    SubTransactionsComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,10 +61,12 @@ import { MenuModule } from 'primeng/menu';
     TableModule,
     MenuModule,
     FormsModule,
+    TabMenuModule,
+    StepsModule,
+    ProgressBarModule,
   ],
   providers: [
     HttpService,
-    WebsocketService,
     LocalStorageService,
     {
       provide: HTTP_INTERCEPTORS,

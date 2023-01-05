@@ -1,0 +1,55 @@
+<div class="card card-w-title flex flex-wrap">
+
+  <h4 *ngIf="!isPaymentDone && cryptoAmount && walletAddress" class="px-6 pt-4 pb-3" >
+    <i class="pi pi-info-circle text-xl text-blue-500"></i>
+    Please send  <span class="text-blue-500">{{ cryptoAmount }} {{ paymentCrypto?.symbol }}</span>
+    to wallet with address:
+    <span class="text-blue-500">{{ walletAddress }}</span>
+  </h4>
+
+  <h4 *ngIf="isPaymentDone" class="px-6 pt-4 pb-3">
+    <i class="pi pi-check-circle text-xl text-blue-500"></i>
+    Payment done, please press complete transaction button to continue
+  </h4>
+
+  <div *ngIf="transactions.length > 0" class="px-6 col-12 h-full">
+    <h5 class="mb-5">Received Transactions </h5>
+    <p-table [value]="transactions" [columns]="transactionsTableCols"
+             responsiveLayout="scroll" [rows]="5"
+              dataKey="hash">
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="hash">Hash</th>
+          <th pSortableColumn="from">From Address</th>
+          <th pSortableColumn="value">Value</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-transaction>
+        <tr [pSelectableRow]="transaction">
+
+          <td style="width:33%; min-width:10rem;">
+            <span class="p-column-title">Hash</span>
+            {{transaction.hash}}
+          </td>
+          <td style="width:33%; min-width:10rem;">
+            <span class="p-column-title">From</span>
+            {{transaction.from}}
+          </td>
+          <td style="width:33%; min-width:10rem;">
+            <span class="p-column-title">Value</span>
+            {{ convertWeiToEth(transaction.value)}}
+          </td>
+
+        </tr>
+      </ng-template>
+
+    </p-table>
+  </div>
+
+  <button pButton pRipple label="Complete Transaction" class="w-full p-3 text-xl"
+          *ngIf="isPaymentDone"
+          (click)="completeTransaction()"
+  ></button>
+
+</div>

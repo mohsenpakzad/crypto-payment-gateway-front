@@ -1,0 +1,49 @@
+<div class="card card-w-title flex flex-wrap">
+  <div class="card px-6 py-6 col-12 h-full">
+    <h5 class="mb-5">Available Crypto Currencies </h5>
+    <p-table [value]="allCryptoCurrencies" [columns]="cryptoTableCols"
+             responsiveLayout="scroll" [rows]="5"
+             [showCurrentPageReport]="true"
+             [(selection)]="selectedCrypto" selectionMode="single" [rowHover]="true" dataKey="id">
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 10px"></th>
+          <th pSortableColumn="name">Name
+            <p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="symbol">Symbol
+            <p-sortIcon field="symbol"></p-sortIcon>
+          </th>
+          <th pSortableColumn="network_id">Network</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-crypto>
+        <tr [pSelectableRow]="crypto">
+          <td>
+            <p-tableRadioButton [value]="crypto"></p-tableRadioButton>
+          </td>
+          <td style="width:30%; min-width:10rem;">
+            <span class="p-column-title">Name</span>
+            {{crypto.name}}
+          </td>
+          <td style="width:30%; min-width:10rem;">
+            <span class="p-column-title">Symbol</span>
+            {{crypto.symbol}}
+          </td>
+          <td style="width:30%; min-width:10rem;">
+            <span class="p-column-title">Network</span>
+            {{ findNetworkById(crypto.id).name}}
+          </td>
+        </tr>
+      </ng-template>
+
+    </p-table>
+  </div>
+
+  <button pButton pRipple label="Select" class="w-full p-3 text-xl"
+          [disabled]="selectedCrypto === null"
+          (click)="selectCrypto()"
+  ></button>
+
+</div>
