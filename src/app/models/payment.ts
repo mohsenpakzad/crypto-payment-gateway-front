@@ -11,7 +11,7 @@ export interface Payment {
   payer_mail?: string;
   status: PaymentStatus;
   crypto_currency_id?: number;
-  crypto_amount?: number;
+  crypto_amount: number | null;
   dest_wallet_id?: number;
   created_at: string;
   expired_at: string;
