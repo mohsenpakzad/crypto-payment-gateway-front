@@ -1,1 +1,13 @@
-<p>payment works!</p>
+<div class="col-12">
+  <div class="card card-w-title flex flex-wrap">
+    <div class="col-12 h-full">
+      <h5>Payment Status</h5>
+      <p-steps [model]="routeItems" styleClass="mt-5"></p-steps>
+    </div>
+  </div>
+
+  <div style="margin-top: -1rem">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
