@@ -82,3 +82,13 @@ export interface WithdrawalBalance {
   fiat_currency_id: number;
   amount: number;
 }
+
+export interface CryptoTransaction {
+  hash: string;
+  nonce: string;
+  block_hash?: string;
+  block_number?: number;
+  from: string;
+  to?: string;
+  value: number;
+}
