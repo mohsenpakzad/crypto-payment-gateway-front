@@ -84,4 +84,8 @@ export class HttpService {
       FiatCurrency[]
     >;
   }
+
+  public isPaymentPayable(paymentId: number) {
+    return this.http.get(`${this.BASE_URL}/ws/payments/${paymentId}`);
+  }
 }
