@@ -71,7 +71,10 @@
   <div class="col-12 xl:col-6">
     <div class="card">
       <h5>Recent Payments</h5>
-      <p-table [value]="userPayments.reverse()" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+      <p-table [value]="userPayments" [paginator]="true" [rows]="5"
+               responsiveLayout="scroll"
+               [sortOrder]="-1"
+               sortField="id">
         <ng-template pTemplate="header">
           <tr>
             <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
