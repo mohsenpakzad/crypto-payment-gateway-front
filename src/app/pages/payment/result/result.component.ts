@@ -25,7 +25,7 @@ export class ResultComponent {
     }
 
     setTimeout(() => {
-      // this.goToUrl();
+      this.goToUrl();
     }, 4000);
   }
 
@@ -34,7 +34,7 @@ export class ResultComponent {
     if (this.reason) {
       redirectUrl = `${redirectUrl}&reason=${this.reason}`;
     } else if (this.payment) {
-      redirectUrl = `${redirectUrl}&id=${this.payment.id}&seller_order_id=${this.payment.seller_order_id}`;
+      redirectUrl = `${redirectUrl}&id=${this.payment.id}&sellerOrderId=${this.payment.seller_order_id}`;
     }
     this.document.location.href = redirectUrl;
   }
