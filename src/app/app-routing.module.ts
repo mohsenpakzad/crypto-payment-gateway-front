@@ -20,7 +20,7 @@ const routes: Routes = [
     path: 'payment/:id',
     component: PaymentComponent,
     children: [
-      { path: '', redirectTo: 'overview', pathMatch: 'full' },
+      { path: '', redirectTo: 'choose-crypto', pathMatch: 'full' },
       { path: 'choose-crypto', component: ChooseCryptoComponent },
       {
         path: 'sub-transactions/:cryptoId',
