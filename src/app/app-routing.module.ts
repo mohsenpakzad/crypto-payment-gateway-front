@@ -9,6 +9,7 @@ import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.co
 import { ChooseCryptoComponent } from './pages/payment/choose-crypto/choose-crypto.component';
 import { SubTransactionsComponent } from './pages/payment/sub-transactions/sub-transactions.component';
 import { ResultComponent } from './pages/payment/result/result.component';
+import { SellerSimComponent } from './pages/seller-sim/seller-sim.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
       { path: 'result', component: ResultComponent },
     ],
   },
+  { path: 'seller-sim', component: SellerSimComponent },
 ];
 
 @NgModule({
