@@ -32,6 +32,7 @@ import { MenuModule } from 'primeng/menu';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { StepsModule } from 'primeng/steps';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { SellerSimComponent } from './pages/seller-sim/seller-sim.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
     ChooseCryptoComponent,
     SubTransactionsComponent,
     ResultComponent,
+    SellerSimComponent,
   ],
   imports: [
     BrowserModule,
